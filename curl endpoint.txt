@@ -1,0 +1,26 @@
+
+
+Crear clientes :
+curl -X POST "http://localhost:8080/clientes" -H "Content-Type: application/json" -d "{\"nombre\":\"Jose Lema\",\"direccion\":\"Otavalo sn y principal\",\"telefono\":\"098254785\",\"contrasena\":\"1234\",\"estado\":true,\"clienteId\":\"C001\"}"
+
+
+Crear cuentas :
+curl -X POST "http://localhost:8080/cuentas" -H "Content-Type: application/json" -d "{\"numeroCuenta\":\"478758\",\"tipoCuenta\":\"Ahorro\",\"saldoInicial\":2000.0,\"estado\":true,\"cliente\":{\"id\":1}}"
+
+
+Hacer movimiento (retirar 575):
+curl -X POST "http://localhost:8080/movimientos" -H "Content-Type: application/json" -d "{\"cuentaId\":1,\"tipoMovimiento\":\"Retiro\",\"valor\":575.0}"
+
+valiar saldo disponible en movimiento(retirar 5759):
+curl -X POST "http://localhost:8080/movimientos" -H "Content-Type: application/json" -d "{\"cuentaId\":1,\"tipoMovimiento\":\"Retiro\",\"valor\":5759.0}"
+
+Listar clientes:
+
+curl "http://localhost:8080/clientes"
+
+Listar cuentas
+curl "http://localhost:8080/cuentas"
+
+Listar movimientos 
+curl "http://localhost:8080/movimientos"
+
